@@ -19,5 +19,21 @@ fun main() {
         in (13..24) -> "Second"
         else -> "Third"
     }
-    print("rng = $rng at dozen $dozenName")
+    println("rng = $rng at dozen $dozenName")
+
+    val nullString: String? = nullableString()
+
+    val length = nullString?.length ?: 0
+
+    println("String $nullString length $length")
+
+}
+
+fun nullableString(): String? {
+    val rng = Random.nextInt(0, 10)
+    return if (rng % 2 == 0) {
+        "Value"
+    } else {
+        null
+    }
 }
