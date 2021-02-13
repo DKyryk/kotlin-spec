@@ -1,5 +1,7 @@
 package com.ercarts.simple
 
+import kotlin.random.Random
+
 /**
  * @author dkyryk
  */
@@ -24,5 +26,11 @@ private fun arrays() {
     for (elem in homogenous) {
         print(" $elem ")
     }
+    println()
+    val rngInts = Array(10, ::randomizer)
+    rngInts.forEach { print(" $it ") }
+}
 
+private fun randomizer(index: Int): Int {
+    return Random.nextInt(index, 10)
 }
