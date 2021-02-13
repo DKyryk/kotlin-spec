@@ -1,5 +1,7 @@
 package com.ercarts.simple
 
+import java.util.*
+import kotlin.collections.HashSet
 import kotlin.random.Random
 
 /**
@@ -8,6 +10,7 @@ import kotlin.random.Random
 fun main() {
     arrays()
     lists()
+    sets()
 }
 
 private fun lists() {
@@ -21,6 +24,20 @@ private fun lists() {
         cheating.removeAt(cheating.lastIndex)
         cheating.add("truth")
         println(cheating.joinToString(separator = " "))
+    }
+}
+
+private fun sets() {
+    runOperationOnNewLine {
+        val uniqueWords = TreeSet<String>()
+        uniqueWords.add("the")
+        uniqueWords.add("the")
+        uniqueWords.add("great")
+        uniqueWords.add("great")
+        uniqueWords.add("great")
+        uniqueWords.add("one")
+
+        println(uniqueWords.joinToString(separator = " "))
     }
 }
 
