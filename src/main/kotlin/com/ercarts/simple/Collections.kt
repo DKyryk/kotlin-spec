@@ -10,25 +10,39 @@ fun main() {
 }
 
 private fun arrays() {
-    val nonHomogenous = arrayOf(0, 1, "three")
-//    won't compile
-//    nonHomogenous.set(0, "zero")
-//    nonHomogenous[0] = "zero"
 
-    val homogenous = arrayOf(0, 1, 2)
-    homogenous[0] = -1
-
-    for (elem in nonHomogenous) {
-        print(" $elem ")
+    runOperationOnNewLine {
+        val nonHomogenous = arrayOf(0, 1, "three")
+        //    won't compile
+        //    nonHomogenous.set(0, "zero")
+        //    nonHomogenous[0] = "zero"
+        for (elem in nonHomogenous) {
+            print(" $elem ")
+        }
     }
-    println()
 
-    for (elem in homogenous) {
-        print(" $elem ")
+    runOperationOnNewLine {
+        val homogenous = arrayOf(0, 1, 2)
+        homogenous[0] = -1
+        for (elem in homogenous) {
+            print(" $elem ")
+        }
     }
+
+    runOperationOnNewLine {
+        val rngInts = Array(10, ::randomizer)
+        rngInts.forEach { print(" $it ") }
+    }
+
+    runOperationOnNewLine {
+        val intArray = intArrayOf(3, 4, 5)
+        intArray.forEach { print(" $it ") }
+    }
+}
+
+private fun runOperationOnNewLine(operation: () -> Unit) {
     println()
-    val rngInts = Array(10, ::randomizer)
-    rngInts.forEach { print(" $it ") }
+    operation()
 }
 
 private fun randomizer(index: Int): Int {
