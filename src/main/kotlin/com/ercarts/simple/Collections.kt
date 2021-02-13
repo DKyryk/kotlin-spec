@@ -7,6 +7,21 @@ import kotlin.random.Random
  */
 fun main() {
     arrays()
+    lists()
+}
+
+private fun lists() {
+    runOperationOnNewLine {
+        val words = listOf("Don't", "be", "sorry.", "Be", "better.")
+        println(words.joinToString(separator = " "))
+    }
+
+    runOperationOnNewLine {
+        val cheating = mutableListOf("Cake", "is", "a", "lie")
+        cheating.removeAt(cheating.lastIndex)
+        cheating.add("truth")
+        println(cheating.joinToString(separator = " "))
+    }
 }
 
 private fun arrays() {
