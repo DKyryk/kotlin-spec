@@ -1,7 +1,6 @@
 package com.ercarts.simple
 
 import java.util.*
-import kotlin.collections.HashSet
 import kotlin.random.Random
 
 /**
@@ -11,6 +10,7 @@ fun main() {
     arrays()
     lists()
     sets()
+    maps()
 }
 
 private fun lists() {
@@ -38,6 +38,13 @@ private fun sets() {
         uniqueWords.add("one")
 
         println(uniqueWords.joinToString(separator = " "))
+    }
+}
+
+private fun maps() {
+    runOperationOnNewLine {
+        val wordAliases = mapOf("init" to "initialization", "stats" to "statistics")
+        println(wordAliases)
     }
 }
 
