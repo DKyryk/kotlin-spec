@@ -1,5 +1,7 @@
 package com.ercarts.simple
 
+import kotlin.random.Random
+
 /**
  * @author dkyryk
  */
@@ -31,6 +33,10 @@ fun main() {
     println('a'.addChar('b'))
     println("base".addSuffix("Suffix"))
 
+    println("Rng nulls")
+    (1..5).forEach{ _ ->
+        println("${handleNull()} | ${letUsage()}")
+    }
 }
 
 private fun tryFunctions(operation: (base: String, suffix: String) -> String) {
@@ -46,3 +52,12 @@ private fun simpleFunction(base: String, suffix: String): String {
 private fun simpleFunctionOneLine(base: String, suffix: String): String = base + suffix
 
 private fun simpleFunctionDefaultSuffix(base: String, suffix: String = "Yes") = base + suffix
+
+private fun randomNull(): String? {
+    val rng = Random.nextInt(0, 30)
+    return if (rng % 2 == 0) "Blank" else null
+}
+
+private fun handleNull() = randomNull() ?: "null"
+
+private fun letUsage() = randomNull()?.let { "$it Let" } ?: "null Let"
