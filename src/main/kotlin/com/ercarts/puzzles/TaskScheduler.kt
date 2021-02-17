@@ -3,13 +3,6 @@ package com.ercarts.puzzles
 /**
  * @author dkyryk
  */
-
-fun main() {
-    val solution = Solution()
-    println(solution.leastInterval("AAABBB".toCharArray(), 2))
-    println(solution.leastInterval("AAAAAABCDEFG".toCharArray(), 2))
-}
-
 class Solution {
 
     fun leastInterval(tasks: CharArray, n: Int): Int {
